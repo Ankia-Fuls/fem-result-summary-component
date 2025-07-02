@@ -5,6 +5,7 @@ $cobalt-blue: hsl(234, 85%, 45%);
 $white: hsl(0, 0%, 100%);
 $pale-blue: hsl(221, 100%, 96%);
 $light-lavender: hsl(241, 100%, 89%);
+$light-lavender-low-op: hsla(241, 100%, 89%, 0.6);
 $dark-gray-blue: hsl(224, 30%, 27%);
 /*GRADIENTS*/
 $bg-light-slate-blue: hsl(252, 100%, 67%);
@@ -14,13 +15,13 @@ $circle-persian-blue: hsla(241, 72%, 46%, 0);
 
 @use "sass:math";
 
-@function rem($pixels, $context: 16) {
+@function rem($pixels, $context: 18) {
     @return (math.div($pixels, $context))*1rem;
 }
 
 @font-face {
     font-family: HankenGrotesk;
-    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+    src: url(../assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
 }
 
 *,
@@ -57,11 +58,57 @@ html {
 
 .result {
     grid-area: result;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(35);
+    background: linear-gradient(170deg, $bg-light-slate-blue, $bg-light-royal-blue);
+    padding: rem(40) rem(60);
+    border-radius: 0 0 30px 30px;
+    color: $white;
+    font-family: HankenGrotesk, sans-serif;
+
+    h3 {
+        color: $light-lavender;
+        font-size: 1rem;
+    }
+
+    .score {
+        background: linear-gradient(0deg, $circle-persian-blue, $circle-violet-blue);
+        height: rem(140);
+        width: rem(140);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #average {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .max {
+            font-size: 0.9rem;
+            color: $light-lavender-low-op;
+        }
+    }
+
 }
 
 .summary {
     grid-area: summary;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    max-width: rem(290);
+    margin: 0 auto;
+    gap: rem(17);
+}
+
 
 @media only screen and (min-width:376px) {
     .element {

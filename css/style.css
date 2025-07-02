@@ -1,7 +1,7 @@
 /*GRADIENTS*/
 @font-face {
   font-family: HankenGrotesk;
-  src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+  src: url(../assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
 }
 *,
 html,
@@ -35,15 +35,55 @@ html {
 
 .result {
   grid-area: result;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.9444444444rem;
+  background: linear-gradient(170deg, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  padding: 2.2222222222rem 3.3333333333rem;
+  border-radius: 0 0 30px 30px;
+  color: hsl(0, 0%, 100%);
+  font-family: HankenGrotesk, sans-serif;
+}
+.result h3 {
+  color: hsl(241, 100%, 89%);
+  font-size: 1rem;
+}
+.result .score {
+  background: linear-gradient(0deg, hsla(241, 72%, 46%, 0), hsl(256, 72%, 46%));
+  height: 7.7777777778rem;
+  width: 7.7777777778rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.result .score #average {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.result .score .max {
+  font-size: 0.9rem;
+  color: hsla(241, 100%, 89%, 0.6);
 }
 
 .summary {
   grid-area: summary;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  max-width: 16.1111111111rem;
+  margin: 0 auto;
+  gap: 0.9444444444rem;
+}
+
 @media only screen and (min-width: 376px) {
   .element {
     grid-template-areas: "result summary" "result summary";
-    margin: 17.5rem auto;
+    margin: 15.5555555556rem auto;
   }
 }/*# sourceMappingURL=style.css.map */
