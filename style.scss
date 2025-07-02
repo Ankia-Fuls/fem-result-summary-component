@@ -1,0 +1,73 @@
+$light-red: hsl(0, 100%, 67%);
+$orangey-yellow: hsl(39, 100%, 56%);
+$green-teal: hsl(166, 100%, 37%);
+$cobalt-blue: hsl(234, 85%, 45%);
+$white: hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$light-lavender: hsl(241, 100%, 89%);
+$dark-gray-blue: hsl(224, 30%, 27%);
+/*GRADIENTS*/
+$bg-light-slate-blue: hsl(252, 100%, 67%);
+$bg-light-royal-blue: hsl(241, 81%, 54%);
+$circle-violet-blue: hsla(256, 72%, 46%, 1);
+$circle-persian-blue: hsla(241, 72%, 46%, 0);
+
+@use "sass:math";
+
+@function rem($pixels, $context: 16) {
+    @return (math.div($pixels, $context))*1rem;
+}
+
+@font-face {
+    font-family: HankenGrotesk;
+    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.element {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "result result"
+        "summary summary";
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+.result {
+    grid-area: result;
+}
+
+.summary {
+    grid-area: summary;
+}
+
+@media only screen and (min-width:376px) {
+    .element {
+        grid-template-areas:
+            "result summary"
+            "result summary";
+        margin: rem(280) auto;
+    }
+}

@@ -1,0 +1,49 @@
+/*GRADIENTS*/
+@font-face {
+  font-family: HankenGrotesk;
+  src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.element {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "result result" "summary summary";
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.result {
+  grid-area: result;
+}
+
+.summary {
+  grid-area: summary;
+}
+
+@media only screen and (min-width: 376px) {
+  .element {
+    grid-template-areas: "result summary" "result summary";
+    margin: 17.5rem auto;
+  }
+}/*# sourceMappingURL=style.css.map */
