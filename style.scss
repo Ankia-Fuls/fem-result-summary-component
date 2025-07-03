@@ -55,6 +55,10 @@ footer {
     }
 }
 
+body {
+    background-color: $pale-blue;
+}
+
 .element {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -65,6 +69,9 @@ footer {
     max-width: 740px;
     margin: 0 auto;
     font-family: HankenGrotesk, sans-serif;
+    background-color: $white;
+    border-radius: 30px;
+
 }
 
 .result {
@@ -73,8 +80,8 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: rem(10);
-    background: linear-gradient(170deg, $bg-light-slate-blue, $bg-light-royal-blue);
-    padding: rem(40) rem(55) 0;
+    background: linear-gradient(170deg, $bg-light-slate-blue 0%, $bg-light-royal-blue 80%);
+    padding: rem(25) rem(55) 0;
     border-radius: 0 0 30px 30px;
     color: $white;
     height: rem(356);
@@ -93,6 +100,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: rem(15) 0;
 
         #average {
             font-size: 3rem;
@@ -122,6 +130,10 @@ footer {
 .summary {
     grid-area: summary;
     padding: rem(25) rem(30);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
 
     h3 {
         padding-bottom: rem(25);
@@ -201,18 +213,94 @@ footer {
         letter-spacing: rem(0.5);
     }
 
+    button:hover {
+        background: linear-gradient(0deg, $bg-light-royal-blue, $bg-light-slate-blue);
+        cursor: pointer;
+    }
+
 
 }
 
 
 
 
-@media only screen and (min-width:376px) {
+@media only screen and (min-width:475px) {
     .element {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas:
             "result summary"
             "result summary";
         margin: rem(280) auto;
+        height: rem(510);
+    }
+
+    .result {
+        padding: rem(40) rem(60);
+        border-radius: 30px;
+        height: 100%;
+        gap: rem(20);
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        .score {
+            margin-top: rem(20);
+            height: rem(200);
+            width: rem(200);
+            border-radius: 50%;
+
+            #average {
+                font-size: 4rem;
+            }
+
+            .max {
+                font-size: 1rem;
+            }
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        .description {
+            font-size: 1rem;
+        }
+
+    }
+
+    .summary {
+        padding: rem(40);
+
+        h3 {
+            font-size: 1.4rem;
+            padding-bottom: rem(30);
+        }
+
+        .total {
+            font-size: 1rem;
+        }
+
+        button {
+            margin: auto 0 0;
+            height: rem(56);
+            font-size: 0.85rem;
+            letter-spacing: rem(0.5);
+            align-self: end;
+        }
+    }
+}
+
+@media only screen and (min-width:561px) and (max-width:630px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width:475px) and (max-width:560px) {
+    html {
+        font-size: 14px;
     }
 }
 

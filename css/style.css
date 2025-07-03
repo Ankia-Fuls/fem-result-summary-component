@@ -26,6 +26,10 @@ footer .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
+body {
+  background-color: hsl(221, 100%, 96%);
+}
+
 .element {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -34,6 +38,8 @@ footer .attribution a {
   max-width: 740px;
   margin: 0 auto;
   font-family: HankenGrotesk, sans-serif;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 30px;
 }
 
 .result {
@@ -42,8 +48,8 @@ footer .attribution a {
   flex-direction: column;
   align-items: center;
   gap: 0.5555555556rem;
-  background: linear-gradient(170deg, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-  padding: 2.2222222222rem 3.0555555556rem 0;
+  background: linear-gradient(170deg, hsl(252, 100%, 67%) 0%, hsl(241, 81%, 54%) 80%);
+  padding: 1.3888888889rem 3.0555555556rem 0;
   border-radius: 0 0 30px 30px;
   color: hsl(0, 0%, 100%);
   height: 19.7777777778rem;
@@ -61,6 +67,7 @@ footer .attribution a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0.8333333333rem 0;
 }
 .result .score #average {
   font-size: 3rem;
@@ -83,6 +90,9 @@ footer .attribution a {
 .summary {
   grid-area: summary;
   padding: 1.3888888889rem 1.6666666667rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .summary h3 {
   padding-bottom: 1.3888888889rem;
@@ -148,11 +158,72 @@ footer .attribution a {
   font-weight: 700;
   letter-spacing: 0.0277777778rem;
 }
+.summary button:hover {
+  background: linear-gradient(0deg, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
+  cursor: pointer;
+}
 
-@media only screen and (min-width: 376px) {
+@media only screen and (min-width: 475px) {
   .element {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: "result summary" "result summary";
     margin: 15.5555555556rem auto;
+    height: 28.3333333333rem;
+  }
+  .result {
+    padding: 2.2222222222rem 3.3333333333rem;
+    border-radius: 30px;
+    height: 100%;
+    gap: 1.1111111111rem;
+  }
+  .result h3 {
+    font-size: 1.3rem;
+  }
+  .result .score {
+    margin-top: 1.1111111111rem;
+    height: 11.1111111111rem;
+    width: 11.1111111111rem;
+    border-radius: 50%;
+  }
+  .result .score #average {
+    font-size: 4rem;
+  }
+  .result .score .max {
+    font-size: 1rem;
+  }
+  .result h2 {
+    font-size: 1.6rem;
+  }
+  .result .description {
+    font-size: 1rem;
+  }
+  .summary {
+    padding: 2.2222222222rem;
+  }
+  .summary h3 {
+    font-size: 1.4rem;
+    padding-bottom: 1.6666666667rem;
+  }
+  .summary .total {
+    font-size: 1rem;
+  }
+  .summary button {
+    margin: auto 0 0;
+    height: 3.1111111111rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.0277777778rem;
+    align-self: end;
+  }
+}
+@media only screen and (min-width: 561px) and (max-width: 630px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 475px) and (max-width: 560px) {
+  html {
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 280px) {
