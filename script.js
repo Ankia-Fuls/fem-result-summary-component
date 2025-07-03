@@ -3,8 +3,6 @@ const fetchJSON = async () => {
     const json = await response.json();
 
     displayVals(json);
-
-
 }
 
 const displayVals = (array) => {
